@@ -1,12 +1,47 @@
 {
   "name": "tw-theming",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Tailwind CSS theming plugin",
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "tw",
+    "theming",
+    "themes",
+    "multiple",
+    "colors",
+    "color",
+    "custom"
+  ],
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.mjs",
+  "types": "dist/src/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup",
+    "test": "pnpm build && vitest",
+    "lint": "eslint . --ext .ts,.js",
+    "format": "prettier --write .",
+    "dev": "npm run build && mkdir -p public/dist && cp dist/* public/dist && vite"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": {
+    "name": "Aleh Belski",
+    "email": "aleh_belski@outlook.com"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.49.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "postcss": "^8.4.30",
+    "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.4"
+  }
 }
